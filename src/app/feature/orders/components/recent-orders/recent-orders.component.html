@@ -1,0 +1,11 @@
+<div class="flex justify-between mt-5">
+  <p class="font-bold">Recent Orders</p>
+  <a
+    routerLink="/orders"
+    class="text-[#ACB7BD] font-semibold text-sm cursor-pointer flex items-center gap-3"
+    >Go to Orders page
+    <i class="pi pi-arrow-right" style="font-size: 14px;"></i> 
+    </a 
+  >
+</div>
+<app-orders-table [orders]="recentOrders"></app-orders-table>

@@ -1,0 +1,22 @@
+<div
+  class="w-[244px] h-[123px] rounded-[17px] bg-white shadow-md flex gap-3 px-3 mt-2 items-center"
+>
+  <img [src]="icon" alt="" />
+  <div class="flex flex-col gap-2 justify-center">
+    <p class="text-[#93A3AB] font-medium text-sm">{{ title }}</p>
+    <div class="flex items-center gap-2">
+      <p class="text-2xl font-bold">{{ amount }}</p>
+      <div
+        *ngIf="change != null"
+        c
+        [ngStyle]="{
+          background: change == '-5.5' ? '#F4E3E3' : '#E3F4E3',
+          color: change == '-5.5' ? '#C56565' : '#65C565'
+        }"
+        class="w-[70px] rounded-[11.58px] bg-slate-500 text-center mt-1 font-medium text-sm"
+      >
+        {{ change }}%
+      </div>
+    </div>
+  </div>
+</div>

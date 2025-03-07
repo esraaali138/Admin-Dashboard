@@ -1,0 +1,40 @@
+<div class="flex gap-3 py-4">
+  <div class="w-[755px] h-[393px] bg-white p-5 rounded-xl shadow">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <h2 class="text-lg font-semibold">Report</h2>
+        <div
+          class="w-[100px] px-2 flex items-center gap-2 border border-[#D2DCE1] text-[#9AA0A4] font-bold text-sm rounded-[15px]"
+        >
+          <p>Sales</p>
+          <p>icon</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 text-[#C4CCD0] font-bold text-xs">
+        <button
+          (click)="updateChart('day')"
+          [class.active]="selectedFilter === 'day'"
+        >
+          Day
+        </button>
+        <button
+          (click)="updateChart('week')"
+          [class.active]="selectedFilter === 'week'"
+        >
+          Week
+        </button>
+        <button
+          (click)="updateChart('month')"
+          [class.active]="selectedFilter === 'month'"
+        >
+          Month
+        </button>
+      </div>
+    </div>
+
+    <canvas id="reportChart"></canvas>
+  </div>
+
+  <app-views></app-views>
+</div>

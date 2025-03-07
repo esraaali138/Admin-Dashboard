@@ -1,0 +1,64 @@
+<aside
+  id="logo-sidebar"
+  class="fixed top-0 left-0 pt-3 h-screen z-40 w-[250px] bg-white border-r border-gray-200 transition-transform sm:translate-x-0 -translate-x-full sm:relative"
+>
+  <div
+    class="flex items-center font-bold justify-center gap-2 w-[140px] m-auto text-sm"
+  >
+    <img src="Frame.svg" alt="" />
+    <p>Manager</p>
+    <p class="text-secondary">Pro</p>
+  </div>
+  <div class="px-2 h-[470px] 800 mt-4">
+    <ul class="space-y-1 font-medium text-sm">
+      <li *ngFor="let item of menuItems; let i = index">
+        <a
+          [routerLink]="item.route"
+          [class.active]="selectedIndex === i"
+          (click)="setIndex(i)"
+          class="flex items-center justify-between w-[207px] px-5 py-3 rounded-[8px] text-[#aeb9be] dark:hover:bg-gray-700 group"
+        >
+          <a class="flex items-center justify-between">
+            <i [class]="item.icon"></i>
+
+            <span
+              [ngStyle]="{
+                color: item.label === 'Messages' ? '#474747' : ''
+              }"
+              class="ms-3 font-bold"
+              >{{ item.label }}</span
+            >
+          </a>
+          <i
+            *ngIf="item.label === 'Messages'"
+            class="pi pi-circle-fill w-[20px]"
+            style="color: #fb7b7b; font-size: 14px"
+          ></i>
+        </a>
+
+        <div
+          *ngIf="item.label === 'Reports'"
+          class="h-[1px] m-3 bg-[#E4EBEF]"
+        ></div>
+      </li>
+    </ul>
+  </div>
+
+  <div
+    class="w-[207px] h-[50px] bg-[#E9F0F3] flex items-center px-2 mx-2 mt-5 rounded-[8px] justify-between"
+  >
+    <div class="flex items-center gap-3">
+      <img class="w-[35px] h-[40px] rounded-md" src="Rectangle 26.svg" alt="" />
+      <div class="flex flex-col justify-center">
+        <span class="text-black font-bold leading-tight text-sm"
+          >Artisan Ukraine</span
+        >
+        <span class="font-medium text-[#ABB7BC] text-sm leading-tight"
+          >Company</span
+        >
+      </div>
+    </div>
+
+    <i class="pi pi-chevron-right text-[#ABB7BC]" style="font-size: 12px"></i>
+  </div>
+</aside>

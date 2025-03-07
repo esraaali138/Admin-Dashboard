@@ -1,0 +1,27 @@
+<div class="w-[250px] h-[393px] bg-white p-5 rounded-xl shadow">
+  <div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold">Visits</h2>
+
+    <div class="flex gap-4 text-[#C4CCD0] font-bold text-xs">
+      <button
+        (click)="updateView('day')"
+        [class.active]="selectedFilter === 'day'"
+      >
+        D
+      </button>
+      <button
+        (click)="updateView('week')"
+        [class.active]="selectedFilter === 'week'"
+      >
+        W
+      </button>
+      <button
+        (click)="updateView('month')"
+        [class.active]="selectedFilter === 'month'"
+      >
+        M
+      </button>
+    </div>
+  </div>
+  <canvas id="visitsChart"></canvas>
+</div>
