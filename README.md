@@ -15,7 +15,7 @@ Ensure you have the following installed:
 Clone the repository and install dependencies:
 
 ```bash
-git clone <your-repo-url>
+git clone <repo-url>
 npm install
 ng serve
 
@@ -37,13 +37,13 @@ src/
 
 
 TechnologiAngular - Core framework
+
 Tailwind CSS - Utility-first CSS framework
 PrimeNG -  icons
 ng2-charts - Charting library based on Chart.jses Used
 
 
 Design & Choices
-
 
 Tailwind CSS was used for fast and flexible styling.
 PrimeNG provides ready-to-use UI components.
