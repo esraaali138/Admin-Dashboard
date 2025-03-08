@@ -1,0 +1,9 @@
+.active {
+  background: #edf4ff;
+  color: #0561fc !important;
+}
+
+aside {
+  height: 100vh !important; /* يخليه ياخذ كل الشاشة */
+  overflow-y: auto !important; 
+}

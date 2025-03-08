@@ -1,5 +1,5 @@
-<nav class="bg-white flex items-center justify-between py-3 px-10">
-  <div class="flex items-center justify-between">
+<nav class="bg-white hidden lg:flex items-center justify-between py-3 px-6">
+  <div class="flex items-center justify-between w-[40%]">
     <div
       class="w-[522px] bg-[#F8FAFB] text-[#C1CACE] p-3 m-auto rounded-[8px] flex items-center gap-3 px-5"
     >
@@ -51,12 +51,18 @@
         style="color: #fb7b7b; font-size: 12px"
       ></i>
     </div>
-    <div class="flex items-center gap-2  h-[35px] px-2 font-bold text-[#0561FC] rounded-[8px] bg-[#E7EDF0] cursor-pointer">
-     <i class="pi pi-sign-in"></i> log in
-    </div>
+    <div
+    class=" me-3 flex items-center gap-2 h-[40px] px-4 font-semibold text-[#0561FC] border border-[#0561FC] rounded-lg hover:bg-[#0561FC] hover:text-white transition duration-300 cursor-pointer"
+  >
+    <i class="pi pi-sign-in"></i>
+    <a routerLink="/login">Log in</a>
+  </div>
+  
 
     <!-- isLogin -->
-    <!-- <div class="w-[153px] h-[35px] flex gap-3 items-center relative">
+
+    <!-- 
+    <div class="w-[153px] h-[35px] flex gap-3 items-center relative"> 
       <img
         class="w-[35px] h-[35px] object-cover"
         src="Rectangle 23.svg"
@@ -105,6 +111,6 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>  -->
   </div>
 </nav>

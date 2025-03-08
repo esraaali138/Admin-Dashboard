@@ -1,34 +1,42 @@
-<div class="bg-white rounded-[17px] mt-4">
-  <div class="bg-white rounded-[17px] p-4 shadow-md">
+<div class="sm:mx-0 mx-6">
+  <div class="bg-white rounded-[17px] p-4 sm:w-[99%] w-full shadow-md">
     <header
-      class="flex justify-between rounded-[4px] px-4 py-3 bg-[#F7F9FA] text-[#A6A9AA] text-sm font-medium"
+      class="flex justify-between rounded-[4px] sm:px-4 px-2 py-3 bg-[#F7F9FA] text-[#A6A9AA] sm:text-sm text-xs font-medium"
     >
-      <p class="w-[30%]">Item Name</p>
-      <p class="w-[15%] text-center">Qty</p>
-      <p class="w-[20%] text-center">Order Date</p>
-      <p class="w-[15%] text-center">Amount</p>
-      <p class="w-[10%] text-center">Status</p>
+      <p class="sm:w-[30%] w-[18%]">Item Name</p>
+      <p class="w-[10%] text-center">Qty</p>
+      <p class="sm:w[20%] w-[15%] text-center">Order Date</p>
+      <p class="sm:w-[15%] w-[10%] text-center">Amount</p>
+      <p class="sm:w-[10%] w-[8%] text-center">Status</p>
     </header>
 
     <main
       *ngFor="let order of orders"
-      class="flex justify-between items-center px-4 py-3"
+      class="flex justify-between items-center sm:px-4 px-0 sm:py-3 py-2"
     >
-      <div class="flex items-center w-[30%] gap-3">
+      <div
+        class="flex items-center sm:w-[30%] w-[20%] gap-2 sm:text-sm text-xs"
+      >
         <img [src]="order.image" alt="{{ order.name }}" width="40" />
 
         <p class="font-medium">{{ order.name }}</p>
       </div>
 
-      <p class="w-[15%] text-center">1</p>
+      <p class="w-[10%]  text-center">{{order.quantity}}</p>
 
-      <p class="w-[20%] text-[#A7AEB1] text-center">{{ order.date }}</p>
+      <p
+        class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center"
+      >
+        {{ order.date }}
+      </p>
 
-      <p class="w-[15%] text-[#3C3C3C] font-medium text-center">
+      <p
+        class="sm:w-[15%] w-[10%] text-[#3C3C3C] sm:text-sm text-xs font-medium text-center"
+      >
         ${{ order.amount }}
       </p>
 
-      <div class="w-[10%] text-center">
+      <div class="sm:w-[10%] w-[12%] text-center">
         <span
           [ngClass]="{
             'bg-[#DFF0FF] text-[#0561FC]': order.status == 'Pending',
@@ -36,7 +44,7 @@
             'bg-[#FFF4DF] text-[#FAA86D]': order.status == 'In Process',
             'bg-[#F4E3E3] text-[#C56565]': order.status == 'Cancelled'
           }"
-          class="py-2 px-6 rounded-[5px] text-xs font-bold whitespace-nowrap"
+          class="py-2 sm:px-3 px-1 rounded-[5px] text-[10px] sm:font-bold whitespace-nowrap"
           >{{ order.status }}</span
         >
       </div>

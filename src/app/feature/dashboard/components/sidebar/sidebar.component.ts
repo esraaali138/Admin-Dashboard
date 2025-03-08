@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   menuItems = [
-    { label: 'Dashboard', icon: 'pi pi-home' , route: '/dashboard' },
-    { label: 'Orders', icon: 'pi pi-shopping-cart' , route: '/orders' },
+    { label: 'Dashboard', icon: 'pi pi-home', route: '/dashboard' },
+    { label: 'Orders', icon: 'pi pi-shopping-cart', route: '/orders' },
     { label: 'Users', icon: 'pi pi-user' },
     { label: 'Items', icon: 'pi pi-inbox' },
     { label: 'Transactions', icon: 'pi pi-wallet' },
@@ -20,8 +20,17 @@ export class SidebarComponent {
   ];
 
   selectedIndex: number = 0;
+  isOpen: boolean = false;
 
   setIndex(index: number) {
     this.selectedIndex = index;
+    this.isOpen = false;
+  }
+
+  toggleSlider() {
+    this.isOpen = true;
+  }
+  closeSidebar() {
+    this.isOpen = false;
   }
 }

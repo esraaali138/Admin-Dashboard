@@ -1,11 +1,14 @@
-<div class="flex justify-between mt-5">
+<div class="flex justify-between mt-5 sm:w-[97%] sm:mx-0 mx-6 sm:text-xl text-md">
   <p class="font-bold">Recent Orders</p>
   <a
     routerLink="/orders"
-    class="text-[#ACB7BD] font-semibold text-sm cursor-pointer flex items-center gap-3"
+    class="text-[#ACB7BD] font-semibold text-sm cursor-pointer flex items-center gap-3 "
     >Go to Orders page
     <i class="pi pi-arrow-right" style="font-size: 14px;"></i> 
     </a 
   >
 </div>
-<app-orders-table [orders]="recentOrders"></app-orders-table>
+<div class="mt-4">
+  <app-orders-table  [orders]="recentOrders"></app-orders-table>
+
+</div>

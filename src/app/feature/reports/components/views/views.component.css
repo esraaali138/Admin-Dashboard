@@ -1,4 +1,25 @@
-.active{
-    color: #0561FC;
-    cursor: pointer;
+.active {
+  color: #0561fc;
+  cursor: pointer;
+}
+
+.view {
+  width: 240px;
+}
+
+@media (min-width: 600px) and (max-width: 640px) {
+  .view {
+    width: 575px;
+  }
+}
+@media (min-width: 545px) and (max-width: 599px) {
+  .view {
+    width: 500px;
+  }
+}
+
+@media (max-width: 544px) {
+  .view {
+    width: 440px;
+  }
 }

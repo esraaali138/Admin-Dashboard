@@ -5,8 +5,28 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./core/layout/layout.module').then((m) => m.LayoutModule),
+      import('./feature/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
   },
+
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./feature/orders/orders.module').then(
+        (m) => m.OrdersModule
+      ),
+  },
+
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./feature/user/user.module').then(
+        (m) => m.UserModule
+      ),
+  },
+
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
@@ -15,3 +35,5 @@ const routes: Routes = [
   providers: [],
 })
 export class AppRoutingModule {}
+
+// { path: '**', component: ContentComponent }

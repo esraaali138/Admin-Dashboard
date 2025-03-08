@@ -23,6 +23,7 @@
     "@tailwindcss/postcss": "^4.0.10",
     "autoprefixer": "^10.4.20",
     "chart.js": "^4.4.8",
+    "flowbite": "^3.1.2",
     "ng2-charts": "^8.0.0",
     "postcss": "^8.5.3",
     "primeicons": "^7.0.0",

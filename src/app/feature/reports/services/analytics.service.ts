@@ -1,4 +1,4 @@
-import { Analytics } from './../models/analytics';
+import { Analytics } from '../models/analytics';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 @Injectable({

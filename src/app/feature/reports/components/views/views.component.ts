@@ -31,19 +31,14 @@ export class ViewsComponent implements OnInit {
           datasets: [
             {
               label: 'Visits',
-              data: [500, 800, 450, 300, 900, 200, 100],
+              data: [5000, 8000, 4500, 3000, 9000, 200, 100],
               backgroundColor: '#3b82f6',
             },
           ],
         },
         options: {
           responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 100, 
-            },
-          },
+
         },
       });
     });
