@@ -1,15 +1,4 @@
 <div class="bg-white rounded-[17px] mt-4">
-  <!-- <ul>
-    <li *ngFor="let order of orders">
-      <img [src]="order.image" alt="{{ order.name }}" width="50" />
-      <span>{{ order.name }}</span>
-      <span>Quantity: {{ order.quantity }}</span>
-      <span>Amount: ${{ order.amount }}</span>
-      <span>Status: {{ order.status }}</span>
-      <span>Date: {{ order.date }}</span>
-    </li>
-  </ul> -->
-
   <div class="bg-white rounded-[17px] p-4 shadow-md">
     <header
       class="flex justify-between rounded-[4px] px-4 py-3 bg-[#F7F9FA] text-[#A6A9AA] text-sm font-medium"
@@ -33,19 +22,21 @@
 
       <p class="w-[15%] text-center">1</p>
 
-      <p class="w-[20%]  text-[#A7AEB1] text-center">{{ order.date }}</p>
+      <p class="w-[20%] text-[#A7AEB1] text-center">{{ order.date }}</p>
 
-      <p class="w-[15%] text-[#3C3C3C] font-medium text-center">${{ order.amount }}</p>
+      <p class="w-[15%] text-[#3C3C3C] font-medium text-center">
+        ${{ order.amount }}
+      </p>
 
       <div class="w-[10%] text-center">
         <span
-          [ngClass]="{'bg-[#DFF0FF] text-[#0561FC]' : order.status == 'Pending' ,
-            'bg-[#E6FDE6] text-[#78C278]' : order.status == 'Approved' , 
-            'bg-[#FFF4DF] text-[#FAA86D]' : order.status == 'In Process',
-            'bg-[#F4E3E3] text-[#C56565]' : order.status == 'Cancelled'
-
-           }"
-          class=" py-2 px-6 rounded-[5px] text-xs font-bold"
+          [ngClass]="{
+            'bg-[#DFF0FF] text-[#0561FC]': order.status == 'Pending',
+            'bg-[#E6FDE6] text-[#78C278]': order.status == 'Approved',
+            'bg-[#FFF4DF] text-[#FAA86D]': order.status == 'In Process',
+            'bg-[#F4E3E3] text-[#C56565]': order.status == 'Cancelled'
+          }"
+          class="py-2 px-6 rounded-[5px] text-xs font-bold whitespace-nowrap"
           >{{ order.status }}</span
         >
       </div>

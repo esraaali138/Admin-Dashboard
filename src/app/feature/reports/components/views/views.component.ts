@@ -10,13 +10,15 @@ Chart.register(...registerables);
   standalone: false,
 })
 export class ViewsComponent implements OnInit {
-  ngOnInit(): void {}
   constructor(private viewsServices: ViewsService) {}
   chartInstance: any;
 
   selectedFilter: string = 'day';
 
-  loadViewChart(filter: string) {
+  ngOnInit(): void {
+    this.loadViewChart(this.selectedFilter);
+  }
+  loadViewChart(filter: string = 'day') {
     this.viewsServices.getViewsData(filter).subscribe((res) => {
       if (this.chartInstance) {
         this.chartInstance.destroy();
@@ -29,13 +31,26 @@ export class ViewsComponent implements OnInit {
           datasets: [
             {
               label: 'Visits',
-              data: [50, 80, 45, 30, 90, 20, 10],
+              data: [500, 800, 450, 300, 900, 200, 100],
               backgroundColor: '#3b82f6',
             },
           ],
         },
-        options: { responsive: true },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100, 
+            },
+          },
+        },
       });
     });
+  }
+
+  updateView(filter: string) {
+    this.selectedFilter = filter;
+    this.loadViewChart(filter);
   }
 }

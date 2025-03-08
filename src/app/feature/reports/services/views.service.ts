@@ -7,13 +7,13 @@ import { of } from 'rxjs';
 export class ViewsService {
   private viewsData = {
     day: {
-      labels: ['10 AM', '12 PM', '2 PM', '4 PM', '6 PM'],
+      labels: ['10p', '12a', '2a', '4p', '6a'],
     },
     week: {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     },
     month: {
-      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      labels: ['Feb', 'Mar', 'Apr', 'May'],
     },
   };
 

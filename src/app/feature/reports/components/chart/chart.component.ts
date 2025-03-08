@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartService } from '../../services/chart.service';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
@@ -9,11 +9,13 @@ Chart.register(...registerables);
   styleUrl: './chart.component.css',
   standalone: false,
 })
-export class ChartComponent {
+export class ChartComponent implements OnInit {
   selectedFilter: string = 'week';
   chartInstance: any;
   constructor(private chartService: ChartService) {}
-
+  ngOnInit(): void {
+    this.loadReportChart(this.selectedFilter);
+  }
   loadReportChart(filter: string = 'week') {
     this.chartService.getReportData(filter).subscribe((res) => {
       if (this.chartInstance) {
@@ -34,8 +36,12 @@ export class ChartComponent {
             },
           ],
         },
+        options : {
+          responsive : true
+        }
       });
     });
+    
   }
 
   updateChart(filter: string) {

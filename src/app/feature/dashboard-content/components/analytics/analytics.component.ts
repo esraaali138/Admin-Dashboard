@@ -13,7 +13,6 @@ export class AnalyticsComponent implements OnInit {
   ngOnInit(): void {
     this.analyticsService.getAnalytics().subscribe({
       next: (res: any) => {
-        console.log('res', res);
         this.analyticsData = res;
       },
       error: (err) => {
