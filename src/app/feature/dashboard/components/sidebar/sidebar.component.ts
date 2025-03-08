@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   menuItems = [
-    { label: 'Dashboard', icon: 'pi pi-home', route: '/dashboard' },
-    { label: 'Orders', icon: 'pi pi-shopping-cart', route: '/orders' },
+    { label: 'Dashboard', icon: 'pi pi-home', route: '/' },
+    { label: 'Orders', icon: 'pi pi-shopping-cart', route: '/orders/list' },
     { label: 'Users', icon: 'pi pi-user' },
     { label: 'Items', icon: 'pi pi-inbox' },
     { label: 'Transactions', icon: 'pi pi-wallet' },

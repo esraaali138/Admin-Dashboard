@@ -3,12 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 
 const routes: Routes = [
-
   {
     path: 'login',
     component: AuthFormComponent,
   },
-
 ];
 
 @NgModule({

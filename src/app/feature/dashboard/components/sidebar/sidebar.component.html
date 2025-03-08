@@ -1,9 +1,19 @@
-<button 
-  (click)="toggleSlider()"  
-  class="inline-flex items-center justify-center m-4 p-2 rounded-lg bg-white shadow-md text-gray-700 hover:bg-gray-200 transition duration-300  lg:hidden"
+<button
+  (click)="toggleSlider()"
+  class="inline-flex items-center justify-center m-4 p-2 rounded-lg bg-white shadow-md text-gray-700 hover:bg-gray-200 transition duration-300 lg:hidden"
 >
-  <svg class="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+  <svg
+    class="w-7 h-7"
+    aria-hidden="true"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      clip-rule="evenodd"
+      fill-rule="evenodd"
+      d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+    ></path>
   </svg>
 </button>
 
@@ -11,19 +21,21 @@
   class="fixed top-0 left-0 pt-3 h-screen z-40 w-[250px] max-w-[300px] bg-white border-r border-gray-200 transition-transform duration-300 ease-in-out lg:translate-x-0"
   [ngClass]="{ '-translate-x-full': !isOpen }"
 >
-
   <div class="flex flex-row-reverse">
     <div class="block lg:hidden">
-      <i class="pi pi-times" style="margin-right: 10px; cursor: pointer;" (click)="closeSidebar()"></i>
-
+      <i
+        class="pi pi-times"
+        style="margin-right: 10px; cursor: pointer"
+        (click)="closeSidebar()"
+      ></i>
     </div>
     <div
-    class="flex items-center font-bold justify-center gap-2 w-[140px] m-auto text-sm"
-  >
-    <img src="Frame.svg" alt="" />
-    <p>Manager</p>
-    <p class="text-secondary">Pro</p>
-  </div>
+      class="flex items-center font-bold justify-center gap-2 w-[140px] m-auto text-sm"
+    >
+      <img src="Frame.svg" alt="" />
+      <p>Manager</p>
+      <p class="text-secondary">Pro</p>
+    </div>
   </div>
   <div class="px-2 h-[470px] 800 mt-4">
     <ul class="space-y-1 font-medium text-sm">

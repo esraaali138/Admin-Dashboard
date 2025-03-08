@@ -15,10 +15,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule,
     ReportsModule,
     OrdersModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    RouterModule,
+    
 ],
   exports: [LayoutComponent],
 })

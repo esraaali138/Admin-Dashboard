@@ -30,13 +30,13 @@ Project Structure
 
 
 src/
-│── app/          # Core application (components, pages, services)
-│── assets/       # Images, icons, and other static files
-│── styles.css    # Global styling
+│── app/          # Core application (core , feature , shared modules)
+│── public/       # Images, icons, and other static files
 
 
 
-TechnologiAngular - Core framework
+
+Technology Angular - Core framework
 
 Tailwind CSS - Utility-first CSS framework
 PrimeNG -  icons

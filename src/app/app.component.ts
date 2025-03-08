@@ -5,11 +5,10 @@ import { NavigationEnd, Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false
+  standalone: false,
 })
 export class AppComponent {
   title = 'Admin-Dashboard';
-
 
   showLayout = true;
 
@@ -18,13 +17,8 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         const currentRoute = event.urlAfterRedirects;
 
-        this.showLayout = !(
-
-          currentRoute.includes('/not-found')
-        );
+        this.showLayout = !currentRoute.includes('/user/login');
       }
     });
   }
-
-  
 }

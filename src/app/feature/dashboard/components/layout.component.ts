@@ -4,12 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-layout',
   standalone: false,
   template: `
-  <h2>layout</h2>
     <div class=" bg-[#F8FAFB]">
       <app-sidebar></app-sidebar>
       <div class="layout flex flex-col ">
         <app-navbar></app-navbar>
-        <main class="sm:px-6 px-0">
+        <main class="xl:px-6 px-0  ">
           <router-outlet></router-outlet>
         </main>
       </div>
