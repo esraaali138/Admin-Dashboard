@@ -2,6 +2,9 @@
 
 This is an **Angular-based Dashboard** that utilizes **Tailwind CSS** for styling, **PrimeNG** for icons, and **ng2-charts** for data visualization.
 
+
+ **Live Demo:** [Click here](https://admin-dashboard-u6gm.vercel.app/)  
+
 ---
 
 ##  **Setup Instructions**
