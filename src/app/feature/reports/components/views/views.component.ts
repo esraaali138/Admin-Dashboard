@@ -38,7 +38,6 @@ export class ViewsComponent implements OnInit {
         },
         options: {
           responsive: true,
-
         },
       });
     });

@@ -15,9 +15,7 @@ export class AnalyticsComponent implements OnInit {
       next: (res: any) => {
         this.analyticsData = res;
       },
-      error: (err) => {
-        console.log('err', err);
-      },
+      error: (err) => {},
     });
   }
 }

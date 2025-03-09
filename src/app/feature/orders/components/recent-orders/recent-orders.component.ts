@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { Orders } from '../../models/orders';
+import { LoaderService } from '../../../../core/services/loader.service';
 
 @Component({
   selector: 'app-recent-orders',
@@ -11,13 +12,26 @@ import { Orders } from '../../models/orders';
 export class RecentOrdersComponent {
   recentOrders: Orders[] = [];
 
-  constructor(private orderService: OrdersService) {}
+  constructor(
+    private orderService: OrdersService,
+    private loaderService: LoaderService
+  ) {}
 
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe((orders) => {
-      this.recentOrders = orders
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .slice(0, 5);
+    this.loaderService.show();
+
+    this.orderService.getOrders().subscribe({
+      next: (orders) => {
+        this.recentOrders = orders
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          )
+          .slice(0, 5);
+        this.loaderService.hide();
+      },
+      error: (err) => {
+        this.loaderService.hide();
+      },
     });
   }
 }

@@ -11,6 +11,7 @@ import { UserModule } from './feature/user/user.module';
 import { OrdersModule } from './feature/orders/orders.module';
 import { DashboardModule } from './feature/dashboard/dashboard.module';
 import { ReportsModule } from './feature/reports/reports.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -22,6 +23,7 @@ import { ReportsModule } from './feature/reports/reports.module';
     DashboardModule,
     ReportsModule,
     AppRoutingModule,
+    SharedModule
   ],
   providers: [
     provideAnimationsAsync(),

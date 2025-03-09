@@ -36,19 +36,15 @@ export class ChartComponent implements OnInit {
             },
           ],
         },
-        options : {
-          responsive : true
-        }
+        options: {
+          responsive: true,
+        },
       });
     });
-    
   }
 
   updateChart(filter: string) {
     this.selectedFilter = filter;
     this.loadReportChart(filter);
   }
-  // ngOnInit() {
-
-  // }
 }
