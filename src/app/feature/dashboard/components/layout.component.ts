@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <app-sidebar></app-sidebar>
       <div class="layout flex flex-col ">
         <app-navbar></app-navbar>
-        <main class="xl:px-6 px-0  ">
+        <main class="px-6 ">
           <router-outlet></router-outlet>
         </main>
       </div>
