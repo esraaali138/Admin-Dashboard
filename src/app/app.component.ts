@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +8,6 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Admin-Dashboard';
-
-  showLayout = true;
-
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        const currentRoute = event.urlAfterRedirects;
-
-        this.showLayout = !currentRoute.includes('/user/login');
-      }
-    });
-  }
+  showLayout! : boolean 
+  
 }

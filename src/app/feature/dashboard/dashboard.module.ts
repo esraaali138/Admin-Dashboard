@@ -19,7 +19,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     OrdersModule,
     DashboardRoutingModule,
     RouterModule,
-    
 ],
   exports: [LayoutComponent],
 })

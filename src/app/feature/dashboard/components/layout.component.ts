@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -34,4 +35,23 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class LayoutComponent {}
+export class LayoutComponent {
+  @Input() showLayout = true;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = event.urlAfterRedirects;
+
+        if (
+          currentRoute.includes('/user/') ||
+          currentRoute.includes('/not-')
+        )
+          this.showLayout = false;
+        else this.showLayout = true;
+      }
+    });
+  }
+}

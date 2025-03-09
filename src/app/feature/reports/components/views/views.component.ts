@@ -31,7 +31,7 @@ export class ViewsComponent implements OnInit {
           datasets: [
             {
               label: 'Visits',
-              data: [5000, 8000, 4500, 3000, 9000, 200, 100],
+              data: res.data,
               backgroundColor: '#3b82f6',
             },
           ],
