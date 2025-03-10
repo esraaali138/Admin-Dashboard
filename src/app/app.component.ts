@@ -9,5 +9,4 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
   title = 'Admin-Dashboard';
   showLayout! : boolean 
-  
 }

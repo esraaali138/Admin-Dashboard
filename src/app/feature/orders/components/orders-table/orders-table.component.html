@@ -10,44 +10,46 @@
       <p class="sm:w-[10%] w-[8%] text-center">Status</p>
     </header>
 
-    <main
-      *ngFor="let order of orders"
-      class="flex justify-between items-center sm:px-4 px-0 sm:py-3 py-2"
-    >
-      <div
-        class="flex items-center sm:w-[30%] w-[20%] gap-2 sm:text-sm text-xs"
+    <ng-container *ngFor="let cart of orders">
+      <main
+        *ngFor="let product of cart.products"
+        class="flex justify-between items-center sm:px-4 px-0 sm:py-3 py-2"
       >
-        <img [src]="order.image" alt="{{ order.name }}" width="40" />
-
-        <p class="font-medium">{{ order.name }}</p>
-      </div>
-
-      <p class="w-[10%]  text-center">{{order.quantity}}</p>
-
-      <p
-        class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center"
-      >
-        {{ order.date }}
-      </p>
-
-      <p
-        class="sm:w-[15%] w-[10%] text-[#3C3C3C] sm:text-sm text-xs font-medium text-center"
-      >
-        ${{ order.amount }}
-      </p>
-
-      <div class="sm:w-[10%] w-[12%] text-center">
-        <span
-          [ngClass]="{
-            'bg-[#DFF0FF] text-[#0561FC]': order.status == 'Pending',
-            'bg-[#E6FDE6] text-[#78C278]': order.status == 'Approved',
-            'bg-[#FFF4DF] text-[#FAA86D]': order.status == 'In Process',
-            'bg-[#F4E3E3] text-[#C56565]': order.status == 'Cancelled'
-          }"
-          class="py-2 sm:px-3 px-1 rounded-[5px] text-[10px] sm:font-bold whitespace-nowrap"
-          >{{ order.status }}</span
+        <div
+          class="flex items-center sm:w-[30%] w-[20%] gap-2 sm:text-sm text-xs"
         >
-      </div>
-    </main>
+          <img [src]="product.thumbnail" alt="{{ product.id }}" width="40" />
+
+          <p class="font-medium">{{ product.title }}</p>
+        </div>
+
+        <p class="w-[10%] text-center">{{ product.quantity }}</p>
+
+        <p
+          class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center"
+        >
+          {{ getRandomDate() }}
+        </p>
+
+        <p
+          class="sm:w-[15%] w-[10%] text-[#3C3C3C] sm:text-sm text-xs font-medium text-center"
+        >
+          ${{ product.total }}
+        </p>
+
+        <div class="sm:w-[10%] w-[12%] text-center">
+          <span
+            [ngClass]="{
+              'bg-[#DFF0FF] text-[#0561FC]': product.status == 'Pending',
+              'bg-[#E6FDE6] text-[#78C278]': product.status == 'Approved',
+              'bg-[#FFF4DF] text-[#FAA86D]': product.status == 'In Process',
+              'bg-[#F4E3E3] text-[#C56565]': product.status == 'Cancelled'
+            }"
+            class="py-2 sm:px-3 px-1 rounded-[5px] text-[10px] sm:font-bold whitespace-nowrap"
+            >{{ product.status }}</span
+          >
+        </div>
+      </main>
+    </ng-container>
   </div>
 </div>

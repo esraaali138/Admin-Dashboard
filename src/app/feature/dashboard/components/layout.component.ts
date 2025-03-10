@@ -42,16 +42,16 @@ export class LayoutComponent {
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        const currentRoute = event.urlAfterRedirects;
+      // if (event instanceof NavigationEnd) {
+      //   const currentRoute = event.urlAfterRedirects;
 
-        if (
-          currentRoute.includes('/user/') ||
-          currentRoute.includes('/not-')
-        )
-          this.showLayout = false;
-        else this.showLayout = true;
-      }
+      //   if (
+      //     currentRoute.includes('/user/') ||
+      //     currentRoute.includes('/not-')
+      //   )
+      //     this.showLayout = false;
+      //   else this.showLayout = true;
+      // }
     });
   }
 }

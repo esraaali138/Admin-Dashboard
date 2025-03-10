@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { OrdersService } from '../../services/orders.service';
-import { Orders } from '../../models/orders';
+import { Order } from '../../models/orders';
 
 @Component({
   selector: 'app-orders-table',
@@ -9,5 +8,9 @@ import { Orders } from '../../models/orders';
   standalone: false,
 })
 export class OrdersTableComponent {
-  @Input() orders!: Orders[];
+  data: string = '';
+  @Input() orders!: Order[];
+  getRandomDate() {
+  return  this.data = new Date().toISOString().split('T')[0];
+  }
 }

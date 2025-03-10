@@ -20,6 +20,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     DashboardRoutingModule,
     RouterModule,
 ],
-  exports: [LayoutComponent],
+  exports: [LayoutComponent , SidebarComponent],
 })
 export class DashboardModule {}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
-import { Orders } from '../../models/orders';
+import { Order } from '../../models/orders';
 import { LoaderService } from '../../../../core/services/loader.service';
 
 @Component({
@@ -14,14 +14,18 @@ export class OrdersComponent {
     private orderService: OrdersService,
     private loaderService: LoaderService
   ) {}
-  orders!: Orders[];
+  // orders!: Orders[];
+  orders :any
   ngOnInit(): void {
     this.loaderService.show();
     this.orderService.getOrders().subscribe({
       next: (orders) => {
-        this.orders = orders.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
+        this.orders = orders
+        console.log('orders', orders)
+
+        // this.orders = orders.sort(
+        //   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        // );
         this.loaderService.hide();
       },
       error: () => {
@@ -30,3 +34,4 @@ export class OrdersComponent {
     });
   }
 }
+

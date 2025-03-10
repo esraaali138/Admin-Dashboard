@@ -1,8 +1,13 @@
-export interface Orders {
-  image: string;
-  name: string;
+export interface  Product {
+  id: string;
+  thumbnail: string;
+  title: string;
   quantity: number;
   date: string;
-  amount: number;
+  total: number;
   status: string;
+}
+
+export interface Order {
+  products: Product[];
 }
