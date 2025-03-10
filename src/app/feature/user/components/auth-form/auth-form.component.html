@@ -14,8 +14,13 @@
           class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
           placeholder="username"
         />
-        <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['username'].errors">
-          <span *ngIf="formControls['username'].errors?.['required']">* This field is required</span>
+        <p
+          class="text-red-500 text-sm mt-1"
+          *ngIf="isSubmitted && formControls['username'].errors"
+        >
+          <span *ngIf="formControls['username'].errors?.['required']"
+            >* This field  required</span
+          >
         </p>
       </div>
 
@@ -28,9 +33,16 @@
           class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
           placeholder="hello@example.com"
         />
-        <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['email'].errors">
-          <span *ngIf="formControls['email'].errors?.['required']">* Email is required</span>
-          <span *ngIf="formControls['email'].errors?.['email']">* Please enter a valid email</span>
+        <p
+          class="text-red-500 text-sm mt-1"
+          *ngIf="isSubmitted && formControls['email'].errors"
+        >
+          <span *ngIf="formControls['email'].errors?.['required']"
+            >* Email is required</span
+          >
+          <span *ngIf="formControls['email'].errors?.['email']"
+            >* Please enter a valid email</span
+          >
         </p>
       </div>
 
@@ -43,8 +55,13 @@
           class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
           placeholder="********"
         />
-        <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['password'].errors">
-          <span *ngIf="formControls['password'].errors?.['required']">* Password is required</span>
+        <p
+          class="text-red-500 text-sm mt-1"
+          *ngIf="isSubmitted && formControls['password'].errors"
+        >
+          <span *ngIf="formControls['password'].errors?.['required']"
+            >* Password is required</span
+          >
           <span *ngIf="formControls['password'].errors?.['minlength']">
             * Password must be at least 8 characters
           </span>
@@ -70,7 +87,11 @@
 
     <p class="mt-4 text-center text-sm text-gray-600">
       {{ isLogin ? "Don't have an account?" : "Already have an account?" }}
-      <a href="#" class="text-blue-500" (click)="isLogin = !isLogin; isSubmitted = false;">
+      <a
+        href="#"
+        class="text-blue-500"
+        (click)="isLogin = !isLogin; isSubmitted = false"
+      >
         {{ isLogin ? "Sign up" : "Sign in" }}
       </a>
     </p>

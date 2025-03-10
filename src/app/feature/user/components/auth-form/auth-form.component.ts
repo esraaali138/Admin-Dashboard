@@ -15,7 +15,6 @@ export class AuthFormComponent {
   isLogin = true;
   authForm!: FormGroup;
   isSubmitted: boolean = false;
-  errorMessage: string = '';
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -56,7 +55,6 @@ export class AuthFormComponent {
         },
         error: (err) => {
           this.loaderService.hide();
-          this.errorMessage = err.message;
         },
       });
     } else {
@@ -67,7 +65,6 @@ export class AuthFormComponent {
         },
         error: (err) => {
           this.loaderService.hide();
-          this.errorMessage = err.message;
         },
       });
     }
