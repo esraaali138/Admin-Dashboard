@@ -27,7 +27,7 @@ export class SidebarComponent {
     this.isOpen = false;
   }
 
-  toggleSlider() {
+  openSidebar() {
     this.isOpen = true;
   }
   closeSidebar() {
