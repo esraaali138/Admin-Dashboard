@@ -8,11 +8,16 @@
 
 
 html{
-background-color: #121212 ;
+background-color: #F8FAFB ;
 }
 
 .dark {
-  --text-color: #F5F5F5;
+  --text-color: #FFFFFF;
+  background-color: #121212 ;
+
+}
+.dark .not {
+  background-color: red;
 }
 
 body {
