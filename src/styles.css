@@ -16,9 +16,6 @@ background-color: #F8FAFB ;
   background-color: #121212 ;
 
 }
-.dark .not {
-  background-color: red;
-}
 
 body {
   color: var(--text-color);

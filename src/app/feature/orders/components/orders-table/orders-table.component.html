@@ -1,5 +1,7 @@
 <div class="">
-  <div class="bg-white rounded-[17px] p-4 sm:w-[99%] w-full shadow-lg dark:bg-[#222222]">
+  <div
+    class="bg-white rounded-[17px] p-4 sm:w-[99%] w-full shadow-lg dark:bg-[#222222]"
+  >
     <header
       class="flex justify-between rounded-[4px] sm:px-4 px-2 py-3 bg-[#F7F9FA] text-[#A6A9AA] sm:text-sm text-xs font-medium dark:bg-[#333333] dark:text-[#CCCCCC]"
     >
@@ -23,31 +25,34 @@
           <p class="font-medium">{{ product.title }}</p>
         </div>
 
-        <p class="w-[10%] text-center dark:text-[#E0E0E0]">{{ product.quantity }}</p>
+        <p class="w-[10%] text-center dark:text-[#E0E0E0]">
+          {{ product.quantity }}
+        </p>
 
         <p
           class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center dark:text-[#E0E0E0]"
         >
-          {{ getRandomDate() }}
+          {{ product.date}}
         </p>
 
         <p
           class="sm:w-[15%] w-[10%] text-[#3C3C3C] sm:text-sm text-xs font-medium text-center dark:text-[#E0E0E0]"
         >
-          ${{ product.total }}
+          ${{ +product.total.toString().slice(0, 5) }}
         </p>
 
         <div class="sm:w-[10%] w-[12%] text-center">
           <span
             [ngClass]="{
-              'bg-[#DFF0FF] text-[#0561FC]': product.status == 'Pending',
-              'bg-[#E6FDE6] text-[#78C278]': product.status == 'Approved',
-              'bg-[#FFF4DF] text-[#FAA86D]': product.status == 'In Process',
-              'bg-[#F4E3E3] text-[#C56565]': product.status == 'Cancelled'
+              'bg-[#DFF0FF] text-[#0561FC]': product.status === 'Pending',
+              'bg-[#E6FDE6] text-[#78C278]': product.status === 'Approved',
+              'bg-[#FFF4DF] text-[#FAA86D]': product.status === 'In Process',
+              'bg-[#F4E3E3] text-[#C56565]': product.status === 'Cancelled'
             }"
             class="py-2 sm:px-3 px-1 rounded-[5px] text-[10px] sm:font-bold whitespace-nowrap"
-            >{{ product.status }}</span
           >
+            {{ product.status }}
+          </span>
         </div>
       </main>
     </ng-container>
