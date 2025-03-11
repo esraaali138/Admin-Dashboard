@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecentOrdersComponent } from './recent-orders.component';
+import { PaginationComponent } from './pagination.component';
 
-describe('RecentOrdersComponent', () => {
-  let component: RecentOrdersComponent;
-  let fixture: ComponentFixture<RecentOrdersComponent>;
+describe('PaginationComponent', () => {
+  let component: PaginationComponent;
+  let fixture: ComponentFixture<PaginationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RecentOrdersComponent]
+      imports: [PaginationComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RecentOrdersComponent);
+    fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

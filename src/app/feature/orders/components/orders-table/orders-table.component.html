@@ -12,7 +12,7 @@
       <p class="sm:w-[10%] w-[8%] text-center">Status</p>
     </header>
 
-    <ng-container *ngFor="let cart of orders">
+    <ng-container *ngFor="let cart of paginatedOrders">
       <main
         *ngFor="let product of cart.products"
         class="flex justify-between items-center sm:px-4 px-0 sm:py-3 py-2 dark:text-[#E0E0E0]"
@@ -32,7 +32,7 @@
         <p
           class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center dark:text-[#E0E0E0]"
         >
-          {{ product.date}}
+          {{ product.date }}
         </p>
 
         <p
@@ -58,3 +58,10 @@
     </ng-container>
   </div>
 </div>
+
+<app-pagination
+  [currentPage]="currentPage"
+  [itemsPerPage]="itemsPerPage"
+  [totalItems]="orders.length"
+  (pageChange)="onPageChange($event)"
+></app-pagination>

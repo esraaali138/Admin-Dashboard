@@ -9,7 +9,9 @@
 
 html{
 background-color: #F8FAFB ;
+overflow-x: hidden;
 }
+
 
 .dark {
   --text-color: #FFFFFF;

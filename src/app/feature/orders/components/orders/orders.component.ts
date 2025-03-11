@@ -14,18 +14,15 @@ export class OrdersComponent {
     private orderService: OrdersService,
     private loaderService: LoaderService
   ) {}
-  // orders!: Orders[];
-  orders :any
+  orders: Order[] = [];
   ngOnInit(): void {
     this.loaderService.show();
     this.orderService.getOrders().subscribe({
       next: (orders) => {
-        this.orders = orders
-        console.log('orders', orders)
-
-        // this.orders = orders.sort(
-        //   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        // );
+        this.orders = orders.map((order)=>({
+          ...order,
+          products: [...order.products.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())]
+        }))
         this.loaderService.hide();
       },
       error: () => {
