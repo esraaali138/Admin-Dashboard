@@ -6,8 +6,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    overflow-x: hidden !important; 
-    /* background: #F8FAFB; */
-  }
-  
+
+html{
+background-color: #121212 ;
+}
+
+.dark {
+  --text-color: #F5F5F5;
+}
+
+body {
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}

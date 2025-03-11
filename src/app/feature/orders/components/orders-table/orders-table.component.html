@@ -1,7 +1,7 @@
 <div class="">
-  <div class="bg-white rounded-[17px] p-4 sm:w-[99%] w-full shadow-lg">
+  <div class="bg-white rounded-[17px] p-4 sm:w-[99%] w-full shadow-lg dark:bg-[#222222]">
     <header
-      class="flex justify-between rounded-[4px] sm:px-4 px-2 py-3 bg-[#F7F9FA] text-[#A6A9AA] sm:text-sm text-xs font-medium"
+      class="flex justify-between rounded-[4px] sm:px-4 px-2 py-3 bg-[#F7F9FA] text-[#A6A9AA] sm:text-sm text-xs font-medium dark:bg-[#333333] dark:text-[#CCCCCC]"
     >
       <p class="sm:w-[30%] w-[18%]">Item Name</p>
       <p class="w-[10%] text-center">Qty</p>
@@ -13,7 +13,7 @@
     <ng-container *ngFor="let cart of orders">
       <main
         *ngFor="let product of cart.products"
-        class="flex justify-between items-center sm:px-4 px-0 sm:py-3 py-2"
+        class="flex justify-between items-center sm:px-4 px-0 sm:py-3 py-2 dark:text-[#E0E0E0]"
       >
         <div
           class="flex items-center sm:w-[30%] w-[20%] gap-2 sm:text-sm text-xs"
@@ -23,16 +23,16 @@
           <p class="font-medium">{{ product.title }}</p>
         </div>
 
-        <p class="w-[10%] text-center">{{ product.quantity }}</p>
+        <p class="w-[10%] text-center dark:text-[#E0E0E0]">{{ product.quantity }}</p>
 
         <p
-          class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center"
+          class="sm:w[20%] w-[15%] sm:text-sm text-xs text-[#A7AEB1] text-center dark:text-[#E0E0E0]"
         >
           {{ getRandomDate() }}
         </p>
 
         <p
-          class="sm:w-[15%] w-[10%] text-[#3C3C3C] sm:text-sm text-xs font-medium text-center"
+          class="sm:w-[15%] w-[10%] text-[#3C3C3C] sm:text-sm text-xs font-medium text-center dark:text-[#E0E0E0]"
         >
           ${{ product.total }}
         </p>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../../core/services/auth.service';
+import { ThemeService } from '../../../../core/services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +11,20 @@ import { AuthService } from '../../../../core/services/auth.service';
 export class NavbarComponent {
   isShow: boolean = false;
   isLoggedIn = false;
-  userDetails : any
+  isDark: boolean = false;
+  userDetails: any;
   openDropdown() {
     this.isShow = !this.isShow;
   }
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private themeService: ThemeService
+  ) {
+    this.themeService.darkMode$.subscribe(
+      (theme) => (this.isDark = theme === 'dark')
+    );
+  }
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe((status) => {
@@ -25,6 +34,9 @@ export class NavbarComponent {
     });
   }
 
+  toggleTheme() {
+    this.themeService.changeTheme();
+  }
   logout() {
     this.authService.logOut();
   }

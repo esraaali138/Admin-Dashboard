@@ -1,7 +1,9 @@
-<nav class="bg-white hidden lg:flex items-center justify-between py-3 px-6">
+<nav
+  class="bg-white hidden lg:flex items-center justify-between py-3 px-6 dark:bg-[#222222]"
+>
   <div class="flex items-center justify-between w-[40%]">
     <div
-      class="w-[522px] bg-[#F8FAFB] text-[#C1CACE] p-3 m-auto rounded-[8px] flex items-center gap-3 px-5"
+      class="w-[522px] bg-[#F8FAFB] text-[#C1CACE] p-3 m-auto rounded-[8px] flex items-center gap-3 px-5 dark:bg-[#333333]"
     >
       <svg
         class="w-5 h-5 text-gray-400"
@@ -25,12 +27,7 @@
 
   <div class="flex items-center justify-start gap-4">
     <div
-      class="w-[35px] h-[35px] flex justify-center items-center rounded-[8px] bg-[#E7EDF0]"
-    >
-      <i style="color: #9dacb4" class="pi pi-briefcase"></i>
-    </div>
-    <div
-      class="w-[35px] h-[35px] flex justify-center items-center rounded-[8px] bg-[#E7EDF0] relative"
+      class="w-[35px] h-[35px] flex justify-center items-center rounded-[8px] bg-[#E7EDF0] relative dark:bg-[#333333]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +46,23 @@
       <i
         class="pi pi-circle-fill absolute z-10 top-0 right-0 bottom-3 w-[10px]"
         style="color: #fb7b7b; font-size: 12px"
+      ></i>
+    </div>
+    <div
+      class="w-[35px] h-[35px] flex justify-center items-center rounded-[8px] bg-[#E7EDF0] relative dark:bg-[#333333] cursor-pointer"
+    >
+      <i class="pi pi-globe text-[#9DACB4]"></i>
+    </div>
+
+    <div
+      [ngStyle]="{ background: isDark ? '#1f2937' : '#E7EDF0' }"
+      class="w-[35px] h-[35px] flex justify-center items-center rounded-[8px] cursor-pointer"
+      (click)="toggleTheme()"
+    >
+      <i
+        [ngStyle]="{ color: isDark ? '#facc15' : '#9DACB4' }"
+        style="color: #9dacb4"
+        [class]="isDark ? 'pi pi-sun' : 'pi pi-moon'"
       ></i>
     </div>
 

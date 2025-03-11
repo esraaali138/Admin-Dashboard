@@ -5,7 +5,6 @@ import { NavigationEnd, Router } from '@angular/router';
   selector: 'app-layout',
   standalone: false,
   template: `
-    <div class=" bg-[#F8FAFB]">
       <app-sidebar></app-sidebar>
       <div class="layout flex flex-col ">
         <app-navbar></app-navbar>
@@ -13,10 +12,11 @@ import { NavigationEnd, Router } from '@angular/router';
           <router-outlet></router-outlet>
         </main>
       </div>
-    </div>
   `,
   styles: [
     `
+
+    
       .layout {
         transition: margin-left 0.3s ease-in-out;
       }

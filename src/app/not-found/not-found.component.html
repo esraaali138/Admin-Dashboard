@@ -1,19 +1,18 @@
-<div
-  class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center"
->
-  <h1 class="text-9xl font-bold text-gray-800 mb-2">404</h1>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center dark:bg-red-500">
+  <h1 class="text-9xl font-bold text-gray-800 mb-2 dark:text-white">404</h1>
 
-  <div class="flex items-center">
-
-    <p class="text-4xl text-gray-800 max-w-md font-bold">
+  <div class="flex items-center dark:bg-black">
+    <p class="text-4xl text-gray-800 max-w-md font-bold dark:text-white">
       The page you were looking for is not found! <br />
     </p>
   </div>
 
-  <p class="text-gray-800 mt-2">You may have mistyped the address or the page may have moved.</p>
+  <p class="text-gray-800 mt-2 dark:text-white">
+    You may have mistyped the address or the page may have moved.
+  </p>
 
   <a
-  (click)="navigateToHome()"
+    (click)="navigateToHome()"
     class="mt-6 px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 cursor-pointer"
   >
     Back to Home

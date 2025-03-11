@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthFormComponent } from './feature/user/components/auth-form/auth-form.component';
 import { LayoutComponent } from './feature/dashboard/components/layout.component';
 import { ContentComponent } from './feature/dashboard/components/content/content.component';
 const routes: Routes = [
@@ -18,7 +17,6 @@ const routes: Routes = [
       },
     ],
   },
-
   {
     path: 'user',
     loadChildren: () =>

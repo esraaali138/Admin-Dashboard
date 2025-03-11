@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartService } from '../../services/chart.service';
 import { Chart, registerables } from 'chart.js';
+import { ThemeService } from '../../../../core/services/theme.service';
 Chart.register(...registerables);
 
 @Component({
@@ -12,9 +13,18 @@ Chart.register(...registerables);
 export class ChartComponent implements OnInit {
   selectedFilter: string = 'week';
   chartInstance: any;
-  constructor(private chartService: ChartService) {}
+  isDark!: boolean;
+  constructor(
+    private chartService: ChartService,
+    private themeService: ThemeService
+  ) {}
   ngOnInit(): void {
     this.loadReportChart(this.selectedFilter);
+
+    this.themeService.darkMode$.subscribe((theme) => {
+      this.isDark = theme === 'dark';
+      this.updateChart(this.selectedFilter);
+    });
   }
   loadReportChart(filter: string = 'week') {
     this.chartService.getReportData(filter).subscribe((res) => {
@@ -30,8 +40,10 @@ export class ChartComponent implements OnInit {
             {
               label: 'Sales',
               data: res.data,
-              borderColor: '#2563eb',
-              backgroundColor: 'rgba(37, 99, 235, 0.2)',
+              borderColor: this.isDark ? '#AAAAAA' : '#2563eb',
+              backgroundColor: this.isDark
+                ? '#357ABD'
+                : 'rgba(37, 99, 235, 0.2)',
               fill: true,
             },
           ],

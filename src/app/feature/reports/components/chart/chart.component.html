@@ -1,5 +1,5 @@
 <div class="flex gap-2 sm:py-4 py-0 mt-6 flex-wrap sm:flex-nowrap ">
-  <div class="sm:w-[740px] w-full h-[393px] bg-white p-5 rounded-xl shadow ">
+  <div class="sm:w-[740px] w-full h-[393px] bg-white p-5 rounded-xl shadow dark:bg-[#242424] ">
     <div class="flex justify-between items-center">
       <div class="flex items-center gap-3">
         <h2 class="text-lg font-semibold">Report</h2>
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="flex gap-4 text-[#C4CCD0] font-bold text-xs">
+      <div class="flex gap-4 text-[#C4CCD0] font-bold text-xs dark:text-[#ffffff]">
         <button
           (click)="updateChart('day')"
           [class.active]="selectedFilter === 'day'"
