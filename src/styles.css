@@ -6,20 +6,47 @@
 @tailwind components;
 @tailwind utilities;
 
-
-html{
-background-color: #F8FAFB ;
-overflow-x: hidden;
+html {
+  background-color: #f8fafb;
+  overflow-x: hidden;
 }
 
-
 .dark {
-  --text-color: #FFFFFF;
-  background-color: #121212 ;
-
+  --text-color: #ffffff;
+  background-color: #121212;
 }
 
 body {
   color: var(--text-color);
   transition: background 0.3s, color 0.3s;
+}
+.rtl-sidebar {
+  right: 0;
+  left: auto;
+}
+
+.ltr-sidebar {
+  left: 0;
+  right: auto;
+}
+
+.ltr-content {
+  right: 0;
+  left: auto;
+}
+.rtl-content {
+  position: relative;
+  right: 20%;
+}
+
+
+
+@media (max-width: 1023px) {
+  .rtl-content {
+    right: 0;
+  }
+  .rtl-sidebar {
+   right: 0 !important;
+   left: auto !important ;  }
+  
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
+
+  isRTL = false;
+
+  constructor(private translationService: TranslationService) {
+    this.translationService.language$.subscribe((lang) => {
+      this.isRTL = lang === 'ar';
+    });
+  }
+  
+
   menuItems = [
     { label: 'dashboard.dashboard', icon: 'pi pi-home', route: '/dashboard' },
     { label: 'dashboard.orders', icon: 'pi pi-shopping-cart', route: '/orders/list' },

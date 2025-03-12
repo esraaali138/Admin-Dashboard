@@ -1,5 +1,6 @@
-<button
-  (click)="openSidebar()"
+<div class="flex justify-end"   (click)="openSidebar()"
+>
+  <button
   class="inline-flex items-center justify-center m-6 p-2 rounded-lg bg-white shadow-md text-gray-700 hover:bg-gray-200 transition duration-300 lg:hidden"
 >
   <svg
@@ -16,15 +17,22 @@
     ></path>
   </svg>
 </button>
+</div>
 
 <aside
-  class="fixed top-0 left-0 pt-3 h-screen z-40 w-[250px] max-w-[300px] bg-white border-r border-gray-200 transition-transform duration-300 ease-in-out lg:translate-x-0 dark:bg-[#222222]"
-  [ngClass]="{ '-translate-x-full': !isOpen }"
->
+  class="fixed top-0 left-0 pt-3 h-screen z-40 w-[250px] max-w-[300px] bg-white border-r border-gray-200 transition-display duration-300 ease-in-out lg:block dark:bg-[#222222]"
+  [ngClass]="{
+    'rtl-sidebar': isRTL,
+    'ltr-sidebar': !isRTL,
+    'hidden' : !isOpen,
+  }"
+
+  >
   <div class="flex flex-row-reverse">
     <div class="block lg:hidden">
       <i
         class="pi pi-times"
+        [ngStyle]="{'margin-left' : isRTL ? '10px' : ''}"
         style="margin-right: 10px; cursor: pointer"
         (click)="closeSidebar()"
       ></i>
@@ -73,10 +81,14 @@
   </div>
 
   <div
-    class="w-[207px] h-[50px] bg-[#E9F0F3] flex items-center px-2 mx-2 mt-5 rounded-[8px] justify-between"
+    class="up w-[207px] h-[50px] bg-[#E9F0F3] flex items-center px-2 mx-2 mt-5 rounded-[8px] justify-between"
   >
     <div class="flex items-center gap-3">
-      <img class="w-[35px] h-[40px] rounded-md" src="assets/images/public/Rectangle 26.svg" alt="" />
+      <img
+        class="w-[35px] h-[40px] rounded-md"
+        src="assets/images/public/Rectangle 26.svg"
+        alt=""
+      />
       <div class="flex flex-col justify-center">
         <span class="text-black font-bold text-sm">Artisan Ukraine</span>
         <span class="font-medium text-[#ABB7BC] text-sm">Company</span>

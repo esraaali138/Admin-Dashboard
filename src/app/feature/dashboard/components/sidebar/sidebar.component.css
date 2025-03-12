@@ -3,3 +3,8 @@
   color: #0561fc !important;
 }
 
+@media (max-width: 1023px) {
+  .up {
+    margin-top: -12px !important;
+  }
+}
