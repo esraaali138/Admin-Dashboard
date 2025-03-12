@@ -63,7 +63,9 @@
       "rememberMe": "Remember me",
       "forgotPassword": "Forgot Password?",
       "dontHaveAccount": "Don't have an account?",
-      "alreadyHaveAccount": "Already have an account?"
+      "alreadyHaveAccount": "Already have an account?",
+      "usernameInvalid": "* Username must contain only English letters."
+
     }
   
   

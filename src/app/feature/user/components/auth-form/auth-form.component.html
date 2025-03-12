@@ -13,14 +13,18 @@
         <input
           type="text"
           formControlName="username"
-          class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
+          class="mt-1 w-full px-3 py-2 border text-gray-500 rounded-lg outline-none"
           [placeholder]="'auth.username' | translate"
         />
         <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['username'].errors">
           <span *ngIf="formControls['username'].errors?.['required']">
             {{ 'auth.usernameRequired' | translate }}
           </span>
+          <span *ngIf="formControls['username'].errors?.['pattern']">
+            {{ 'auth.usernameInvalid' | translate }}
+          </span>
         </p>
+        
       </div>
 
       <!-- Email -->
@@ -31,7 +35,7 @@
         <input
           type="email"
           formControlName="email"
-          class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
+          class="mt-1 w-full px-3 py-2 text-gray-500  border rounded-lg outline-none"
           [placeholder]="'auth.email' | translate"
         />
         <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['email'].errors">
@@ -52,7 +56,7 @@
         <input
           type="password"
           formControlName="password"
-          class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
+          class="mt-1 w-full px-3 py-2 text-gray-500 border rounded-lg outline-none"
           placeholder="********"
         />
         <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['password'].errors">
@@ -79,7 +83,7 @@
 
       <button
         (click)="onSubmit()"
-        type="button"
+        type="submit"
         class="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-400 transition cursor-pointer dark:bg-[#007AFF]"
       >
         {{ isLogin ? ('auth.signIn' | translate) : ('auth.signUp' | translate) }}
@@ -88,7 +92,7 @@
 
     <p class="mt-4 text-center text-sm text-gray-600 dark:text-[#A0A0A0]">
       {{ isLogin ? ('auth.dontHaveAccount' | translate) : ('auth.alreadyHaveAccount' | translate) }}
-      <a href="#" class="text-blue-500" (click)="isLogin = !isLogin; isSubmitted = false">
+      <a  class="text-blue-500 cursor-pointer" (click)="isLogin = !isLogin; isSubmitted = false">
         {{ isLogin ? ('auth.signUp' | translate) : ('auth.signIn' | translate) }}
       </a>
     </p>

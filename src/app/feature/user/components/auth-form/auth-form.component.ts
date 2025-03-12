@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../../core/services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../models/user';
 import { LoaderService } from '../../../../core/services/loader.service';
 
@@ -19,12 +19,13 @@ export class AuthFormComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.authForm = this.fb.group({
-      username: ['', Validators.required],
+      username: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
@@ -48,26 +49,41 @@ export class AuthFormComponent {
     };
 
     if (this.isLogin) {
-      this.authService.signIn(newUser).subscribe({
-        next: (res) => {
-          this.loaderService.hide();
-          this.router.navigate(['/']);
-        },
-        error: (err) => {
-          this.loaderService.hide();
-        },
-      });
-    } else {
-      this.authService.signUp(newUser).subscribe({
-        next: (res) => {
-          this.loaderService.hide();
-          this.isLogin = true;
-        },
-        error: (err) => {
-          this.loaderService.hide();
-        },
-      });
+      console.log('hi from login');
+
+      this.signIn(newUser);
+    } else this.signUp(newUser);
+  }
+  private signUp(user: User) {
+    localStorage.setItem('userData', JSON.stringify(user));
+
+    this.router.navigate(['/user/login']);
+    this.isLogin = true;
+  }
+  private signIn(user: User) {
+    const existingUserData = localStorage.getItem('userData');
+    if (!existingUserData) {
+      this.loaderService.hide();
+      alert('No registered user found. Please sign up first.');
+      return;
     }
+
+    const storedUser: User = JSON.parse(existingUserData);
+
+    if (
+      storedUser.email !== user.email ||
+      storedUser.password !== user.password
+    ) {
+      this.loaderService.hide();
+      alert('Invalid email or password. Please try again.');
+      return;
+    }
+
+    localStorage.setItem('isLoggedIn', 'true');
+    this.authService.setLoggedIn(true);
+
+    this.loaderService.hide();
+    this.router.navigate(['/']);
   }
 
   markAsTouched() {

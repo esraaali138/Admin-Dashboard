@@ -4,9 +4,14 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 
 const routes: Routes = [
   {
+    path: 'signup',
+    component: AuthFormComponent,
+  },
+  {
     path: 'login',
     component: AuthFormComponent,
   },
+ 
 ];
 
 @NgModule({

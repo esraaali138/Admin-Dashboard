@@ -11,25 +11,25 @@ export class AnalyticsService {
       title: 'reports.totalRevenue',
       amount: '$52.6k',
       change: '+3.4',
-      icon: 'Icon_Total_Revenue.svg',
+      icon: 'assets/images/public/Icon_Total_Revenue.svg',
     },
     {
       title: 'reports.todayRevenue',
       amount: '$1024',
       change: '-5.5',
-      icon: 'Icon_Today Revenue.svg',
+      icon: 'assets/images/public/Icon_Today Revenue.svg',
     },
     {
       title: 'reports.itemsSold',
       amount: '22',
       change: null,
-      icon: 'Icon_Sales.svg',
+      icon: 'assets/images/public/Icon_Sales.svg',
     },
     {
       title: 'reports.usersActive',
       amount: '11',
       change: null,
-      icon: 'Group 1.svg',
+      icon: 'assets/images/public/Group 1.svg',
     },
   ];
   getAnalytics(): Observable<Analytics[]> {

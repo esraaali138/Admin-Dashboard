@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
+import { BehaviorSubject, of, throwError } from 'rxjs';
 import { User } from '../../feature/user/models/user';
 import { Router } from '@angular/router';
 
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private fakeJwtToken = 'fake-jwt-token';
-  private isLoggedInSubject = new BehaviorSubject<boolean>(
-    this.isAuthenticatedUser()
+  private loggedIn = new BehaviorSubject<boolean>(
+    localStorage.getItem('isLoggedIn') === 'true'
   );
-  isLoggedIn$ = this.isLoggedInSubject.asObservable();
+  isLoggedIn$ = this.loggedIn.asObservable();
 
   constructor(private router: Router) {}
 
@@ -19,7 +19,6 @@ export class AuthService {
     localStorage.setItem('userData', JSON.stringify(user));
     return of('User registered successfully');
   }
-
   signIn(user: User) {
     const userDetails = localStorage.getItem('userData');
     if (userDetails) {
@@ -29,7 +28,6 @@ export class AuthService {
         parsedData.password === user.password
       ) {
         localStorage.setItem('jwt', this.fakeJwtToken);
-        this.isLoggedInSubject.next(true);
         return of(this.fakeJwtToken);
       } else {
         return throwError(
@@ -40,12 +38,13 @@ export class AuthService {
     return throwError(() => new Error('No user found, please sign up first'));
   }
 
-  isAuthenticatedUser(): boolean {
-    return localStorage.getItem('jwt') === this.fakeJwtToken;
+  setLoggedIn(status: boolean) {
+    this.loggedIn.next(status);
   }
 
   logOut(): void {
-    localStorage.removeItem('jwt');
-    this.router.navigate(['/user/login']);
+    localStorage.removeItem('isLoggedIn');
+    this.setLoggedIn(false);
+    this.router.navigate(['/user/signup']);
   }
 }
