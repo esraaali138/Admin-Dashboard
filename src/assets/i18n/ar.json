@@ -1,0 +1,69 @@
+{
+  "dashboard": {
+    "searchPlaceholder": "بحث",
+    "login": "تسجيل الدخول",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+      "dashboard": "لوحة التحكم",
+      "orders": "الطلبات",
+      "users": "المستخدمون",
+      "items": "العناصر",
+      "transactions": "المعاملات",
+      "reports": "التقارير",
+      "messages": "الرسائل",
+      "support": "الدعم",
+      "managerPro": "مدير برو"
+    
+  },
+  "reports": {
+    "Analytics": "تحليلات",
+    "Report": "تقرير",
+    "sales": "المبيعات",
+    "totalRevenue": "إجمالي الإيرادات",
+    "todayRevenue": "إيرادات اليوم",
+    "itemsSold": "العناصر المباعة",
+    "usersActive": "المستخدمون النشطون",
+    "visits": "الزيارات",
+    "D": "ي",
+    "W": "أ",
+    "M": "ش",
+    "day": "يوم",
+    "week": "أسبوع",
+    "month": "شهر"
+  },
+  "orders": {
+    "allOrders": "جميع الطلبات",
+    "itemName": "اسم العنصر",
+    "qty": "الكمية",
+    "orderDate": "تاريخ الطلب",
+    "amount": "المبلغ",
+    "status": "الحالة",
+    "pending": "قيد الانتظار",
+    "approved": "موافق عليه",
+    "inProcess": "قيد التنفيذ",
+    "cancelled": "ملغى",
+    "recentOrders": "الطلبات الأخيرة",
+    "goToOrdersPage": "الانتقال إلى صفحة الطلبات"
+  },
+  
+    "auth": {
+      "signIn": "تسجيل الدخول",
+      "signUp": "إنشاء حساب",
+      "signInToAccount": "تسجيل الدخول إلى حسابك",
+      "signUpYourAccount": "إنشاء حساب جديد",
+      "username": "اسم المستخدم",
+      "usernameRequired": "* هذا الحقل مطلوب",
+      "email": "البريد الإلكتروني",
+      "emailRequired": "* البريد الإلكتروني مطلوب",
+      "emailInvalid": "* يرجى إدخال بريد إلكتروني صالح",
+      "password": "كلمة المرور",
+      "passwordRequired": "* كلمة المرور مطلوبة",
+      "passwordMinLength": "* يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+      "rememberMe": "تذكرني",
+      "forgotPassword": "هل نسيت كلمة المرور؟",
+      "dontHaveAccount": "ليس لديك حساب؟",
+      "alreadyHaveAccount": "لديك حساب بالفعل؟"
+    }
+  }
+  
+

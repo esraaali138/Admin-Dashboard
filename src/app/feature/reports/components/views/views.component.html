@@ -1,26 +1,26 @@
 <div class="view h-[393px] bg-white p-5 rounded-xl shadow dark:bg-[#242424] ">
   <div class="flex justify-between items-center">
-    <h2 class="text-lg font-semibold ">Visits</h2>
+    <h2 class="text-lg font-semibold ">{{'reports.visits' | translate}}</h2>
 
     <div class="flex gap-4 text-[#C4CCD0] font-bold text-xs dark:text-[#ffffff]">
       <button
         (click)="updateView('day')"
         [class.active]="selectedFilter === 'day'"
       >
-        D
+        {{'reports.D' | translate}}
       </button>
       <button
         (click)="updateView('week')"
         [class.active]="selectedFilter === 'week'"
       >
-        W
-      </button>
+      {{'reports.W' | translate}}
+    </button>
       <button
         (click)="updateView('month')"
         [class.active]="selectedFilter === 'month'"
       >
-        M
-      </button>
+      {{'reports.M' | translate}}
+    </button>
     </div>
   </div>
   <canvas id="visitsChart"></canvas>

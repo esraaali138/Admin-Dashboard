@@ -6,4 +6,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './content.component.html',
   styleUrl: './content.component.css',
 })
-export class ContentComponent {}
+export class ContentComponent {
+  orders = []
+}

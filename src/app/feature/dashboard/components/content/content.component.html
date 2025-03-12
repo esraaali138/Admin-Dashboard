@@ -1,14 +1,14 @@
 <app-analytics></app-analytics>
 <app-chart></app-chart>
-<div class="flex justify-between mt-5 sm:w-[97%] sm:text-xl text-md">
-  <p class="font-bold">Recent Orders</p>
+<div class="flex justify-between mt-5 sm:w-[97%] sm:text-xl text-md" *ngIf="orders.length > 0" >
+  <p class="font-bold">{{'orders.recentOrders' | translate}}</p>
   <a
     routerLink="/orders/list"
     class="text-[#ACB7BD] font-semibold text-sm cursor-pointer flex items-center gap-3 dark:text-[#B0B0B0]"
-    >Go to Orders page
+    >{{'orders.goToOrdersPage' | translate}}
     <i class="pi pi-arrow-right" style="font-size: 14px"></i>
   </a>
 </div>
 <div class="mt-4">
-  <app-orders-table></app-orders-table>
+  <app-orders-table [orders]="orders"></app-orders-table>
 </div>

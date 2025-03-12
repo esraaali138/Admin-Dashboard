@@ -12,7 +12,13 @@ import { OrdersModule } from './feature/orders/orders.module';
 import { DashboardModule } from './feature/dashboard/dashboard.module';
 import { ReportsModule } from './feature/reports/reports.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
   imports: [
@@ -23,9 +29,18 @@ import { SharedModule } from './shared/shared.module';
     DashboardModule,
     ReportsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    })
   ],
   providers: [
+    
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {

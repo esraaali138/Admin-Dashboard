@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../../core/services/auth.service';
 import { ThemeService } from '../../../../core/services/theme.service';
+import { TranslationService } from '../../../../core/services/translation.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +21,8 @@ export class NavbarComponent {
 
   constructor(
     private authService: AuthService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private translateService : TranslationService,
   ) {
     this.themeService.darkMode$.subscribe(
       (theme) => (this.isDark = theme === 'dark')
@@ -27,6 +30,7 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
+
     this.authService.isLoggedIn$.subscribe((status) => {
       this.isLoggedIn = status;
       const userData = localStorage.getItem('userData');
@@ -39,5 +43,9 @@ export class NavbarComponent {
   }
   logout() {
     this.authService.logOut();
+  }
+  toggleLang(){
+    
+    this.translateService.toggleLang()
   }
 }

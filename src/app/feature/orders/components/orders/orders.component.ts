@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from '../../models/orders';
 import { LoaderService } from '../../../../core/services/loader.service';
-
 @Component({
   selector: 'app-orders',
   standalone: false,

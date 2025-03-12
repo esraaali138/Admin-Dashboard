@@ -22,7 +22,7 @@
   [ngClass]="{ '-translate-x-full': !isOpen }"
 >
   <div class="flex flex-row-reverse">
-    <div class="block lg:hidden ">
+    <div class="block lg:hidden">
       <i
         class="pi pi-times"
         style="margin-right: 10px; cursor: pointer"
@@ -32,7 +32,7 @@
     <div
       class="flex items-center font-bold justify-center gap-2 w-[140px] m-auto text-sm"
     >
-      <img src="Frame.svg" alt="" />
+      <img src="assets/images/public/Frame.svg" alt="" />
       <p>Manager</p>
       <p class="text-secondary">Pro</p>
     </div>
@@ -51,10 +51,10 @@
 
             <span
               [ngStyle]="{
-                color: item.label === 'Messages' ? '#474747' : '' 
+                color: item.label === 'Messages' ? '#474747' : ''
               }"
               class="ms-3 font-bold"
-              >{{ item.label }}</span
+              >{{ item.label | translate }}</span
             >
           </a>
           <i
@@ -76,7 +76,7 @@
     class="w-[207px] h-[50px] bg-[#E9F0F3] flex items-center px-2 mx-2 mt-5 rounded-[8px] justify-between"
   >
     <div class="flex items-center gap-3">
-      <img class="w-[35px] h-[40px] rounded-md" src="Rectangle 26.svg" alt="" />
+      <img class="w-[35px] h-[40px] rounded-md" src="assets/images/public/Rectangle 26.svg" alt="" />
       <div class="flex flex-col justify-center">
         <span class="text-black font-bold text-sm">Artisan Ukraine</span>
         <span class="font-medium text-[#ABB7BC] text-sm">Company</span>

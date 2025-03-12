@@ -9,6 +9,7 @@ import { ContentComponent } from './components/content/content.component';
 import { ReportsModule } from "../reports/reports.module";
 import { OrdersModule } from "../orders/orders.module";
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [SidebarComponent, NavbarComponent, LayoutComponent ,ContentComponent],
@@ -19,6 +20,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     OrdersModule,
     DashboardRoutingModule,
     RouterModule,
+    TranslateModule
 ],
   exports: [LayoutComponent , SidebarComponent],
 })

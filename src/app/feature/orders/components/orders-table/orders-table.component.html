@@ -1,15 +1,21 @@
-<div class="">
+<div *ngIf="orders.length > 0">
   <div
     class="bg-white rounded-[17px] p-4 sm:w-[99%] w-full shadow-lg dark:bg-[#222222]"
   >
     <header
       class="flex justify-between rounded-[4px] sm:px-4 px-2 py-3 bg-[#F7F9FA] text-[#A6A9AA] sm:text-sm text-xs font-medium dark:bg-[#333333] dark:text-[#CCCCCC]"
     >
-      <p class="sm:w-[30%] w-[18%]">Item Name</p>
-      <p class="w-[10%] text-center">Qty</p>
-      <p class="sm:w[20%] w-[15%] text-center">Order Date</p>
-      <p class="sm:w-[15%] w-[10%] text-center">Amount</p>
-      <p class="sm:w-[10%] w-[8%] text-center">Status</p>
+      <p class="sm:w-[30%] w-[18%]">{{ "orders.itemName" | translate }}</p>
+      <p class="w-[10%] text-center">{{ "orders.qty" | translate }}</p>
+      <p class="sm:w[20%] w-[15%] text-center">
+        {{ "orders.orderDate" | translate }}
+      </p>
+      <p class="sm:w-[15%] w-[10%] text-center">
+        {{ "orders.amount" | translate }}
+      </p>
+      <p class="sm:w-[10%] w-[8%] text-center">
+        {{ "orders.status" | translate }}
+      </p>
     </header>
 
     <ng-container *ngFor="let cart of paginatedOrders">
@@ -60,6 +66,7 @@
 </div>
 
 <app-pagination
+  *ngIf="orders.length > 0"
   [currentPage]="currentPage"
   [itemsPerPage]="itemsPerPage"
   [totalItems]="orders.length"

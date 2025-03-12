@@ -1,69 +1,66 @@
 <div class="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-[#121212]">
   <div class="bg-white shadow-lg rounded-lg p-8 md:w-96 w-full md:mx-0 mx-6 dark:bg-[#222831]">
     <h2 class="text-center text-gray-600 mt-2 font-bold dark:text-[#A0A0A0]">
-      {{ isLogin ? "Sign in to your account" : "Sign up your account" }}
+      {{ isLogin ? ('auth.signInToAccount' | translate) : ('auth.signUpYourAccount' | translate) }}
     </h2>
 
     <form [formGroup]="authForm" class="mt-6">
       <!-- Username (isLogin) -->
       <div *ngIf="!isLogin">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">Username</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">
+          {{ 'auth.username' | translate }}
+        </label>
         <input
           type="text"
           formControlName="username"
           class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
-          placeholder="username"
+          [placeholder]="'auth.username' | translate"
         />
-        <p
-          class="text-red-500 text-sm mt-1"
-          *ngIf="isSubmitted && formControls['username'].errors"
-        >
-          <span *ngIf="formControls['username'].errors?.['required']"
-            >* This field  required</span
-          >
+        <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['username'].errors">
+          <span *ngIf="formControls['username'].errors?.['required']">
+            {{ 'auth.usernameRequired' | translate }}
+          </span>
         </p>
       </div>
 
       <!-- Email -->
       <div class="mt-4">
-        <label class="block text-sm font-medium text-gray-700 dark:text-[#A0A0A0]">Email</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-[#A0A0A0]">
+          {{ 'auth.email' | translate }}
+        </label>
         <input
           type="email"
           formControlName="email"
           class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
-          placeholder="hello@example.com"
+          [placeholder]="'auth.email' | translate"
         />
-        <p
-          class="text-red-500 text-sm mt-1"
-          *ngIf="isSubmitted && formControls['email'].errors"
-        >
-          <span *ngIf="formControls['email'].errors?.['required']"
-            >* Email is required</span
-          >
-          <span *ngIf="formControls['email'].errors?.['email']"
-            >* Please enter a valid email</span
-          >
+        <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['email'].errors">
+          <span *ngIf="formControls['email'].errors?.['required']">
+            {{ 'auth.emailRequired' | translate }}
+          </span>
+          <span *ngIf="formControls['email'].errors?.['email']">
+            {{ 'auth.emailInvalid' | translate }}
+          </span>
         </p>
       </div>
 
       <!-- Password -->
       <div class="mt-4">
-        <label class="block text-sm font-medium text-gray-700 dark:text-[#A0A0A0]">Password</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-[#A0A0A0]">
+          {{ 'auth.password' | translate }}
+        </label>
         <input
           type="password"
           formControlName="password"
           class="mt-1 w-full px-3 py-2 border rounded-lg outline-none"
           placeholder="********"
         />
-        <p
-          class="text-red-500 text-sm mt-1"
-          *ngIf="isSubmitted && formControls['password'].errors"
-        >
-          <span *ngIf="formControls['password'].errors?.['required']"
-            >* Password is required</span
-          >
+        <p class="text-red-500 text-sm mt-1" *ngIf="isSubmitted && formControls['password'].errors">
+          <span *ngIf="formControls['password'].errors?.['required']">
+            {{ 'auth.passwordRequired' | translate }}
+          </span>
           <span *ngIf="formControls['password'].errors?.['minlength']">
-            * Password must be at least 8 characters
+            {{ 'auth.passwordMinLength' | translate }}
           </span>
         </p>
       </div>
@@ -71,9 +68,13 @@
       <div *ngIf="isLogin" class="flex items-center justify-between mt-4">
         <label class="flex items-center">
           <input type="checkbox" class="mr-2" />
-          <span class="text-sm text-gray-600 dark:text-[#A0A0A0]">Remember me</span>
+          <span class="text-sm text-gray-600 dark:text-[#A0A0A0]">
+            {{ 'auth.rememberMe' | translate }}
+          </span>
         </label>
-        <a href="#" class="text-sm text-blue-500">Forgot Password?</a>
+        <a href="#" class="text-sm text-blue-500">
+          {{ 'auth.forgotPassword' | translate }}
+        </a>
       </div>
 
       <button
@@ -81,18 +82,14 @@
         type="button"
         class="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-400 transition cursor-pointer dark:bg-[#007AFF]"
       >
-        {{ isLogin ? "Sign In" : "Sign Up" }}
+        {{ isLogin ? ('auth.signIn' | translate) : ('auth.signUp' | translate) }}
       </button>
     </form>
 
     <p class="mt-4 text-center text-sm text-gray-600 dark:text-[#A0A0A0]">
-      {{ isLogin ? "Don't have an account?" : "Already have an account?" }}
-      <a
-        href="#"
-        class="text-blue-500 "
-        (click)="isLogin = !isLogin; isSubmitted = false"
-      >
-        {{ isLogin ? "Sign up" : "Sign in" }}
+      {{ isLogin ? ('auth.dontHaveAccount' | translate) : ('auth.alreadyHaveAccount' | translate) }}
+      <a href="#" class="text-blue-500" (click)="isLogin = !isLogin; isSubmitted = false">
+        {{ isLogin ? ('auth.signUp' | translate) : ('auth.signIn' | translate) }}
       </a>
     </p>
   </div>

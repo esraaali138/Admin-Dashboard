@@ -1,7 +1,8 @@
-<div class="py-4 px-2">
-  <h2 class="font-bold text-black px-2 dark:text-[#F5F5F5]">All Orders</h2>
+<div class="py-4 px-2" *ngIf="orders.length > 0">
+  <h2 class="font-bold text-black px-2 dark:text-[#F5F5F5]">
+    {{ "orders.allOrders" | translate }}
+  </h2>
   <div class="mt-4">
-    <app-orders-table  [orders]="orders"></app-orders-table>
-
+    <app-orders-table [orders]="orders"></app-orders-table>
   </div>
 </div>

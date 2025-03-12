@@ -8,17 +8,17 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   menuItems = [
-    { label: 'Dashboard', icon: 'pi pi-home', route: '/dashboard' },
-    { label: 'Orders', icon: 'pi pi-shopping-cart', route: '/orders/list' },
-    { label: 'Users', icon: 'pi pi-user' },
-    { label: 'Items', icon: 'pi pi-inbox' },
-    { label: 'Transactions', icon: 'pi pi-wallet' },
-    { label: 'Reports', icon: 'pi pi-file' },
-    { label: 'Messages', icon: 'pi pi-envelope' },
-    { label: 'Support', icon: 'pi pi-question-circle' },
-    { label: 'Setting', icon: 'pi pi-cog' },
+    { label: 'dashboard.dashboard', icon: 'pi pi-home', route: '/dashboard' },
+    { label: 'dashboard.orders', icon: 'pi pi-shopping-cart', route: '/orders/list' },
+    { label: 'dashboard.users', icon: 'pi pi-user' },
+    { label: 'dashboard.items', icon: 'pi pi-inbox' },
+    { label: 'dashboard.transactions', icon: 'pi pi-wallet' },
+    { label: 'dashboard.reports', icon: 'pi pi-file' },
+    { label: 'dashboard.messages', icon: 'pi pi-envelope' },
+    { label: 'dashboard.support', icon: 'pi pi-question-circle' },
+    { label: 'dashboard.settings', icon: 'pi pi-cog' }
   ];
-
+  
   selectedIndex: number = 0;
   isOpen: boolean = false;
 

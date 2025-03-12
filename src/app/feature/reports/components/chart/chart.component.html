@@ -1,12 +1,14 @@
-<div class="flex gap-2 sm:py-4 py-0 mt-6 flex-wrap sm:flex-nowrap ">
-  <div class="sm:w-[740px] w-full h-[393px] bg-white p-5 rounded-xl shadow dark:bg-[#242424] ">
+<div class="flex gap-2 sm:py-4 py-0 mt-6 flex-wrap sm:flex-nowrap">
+  <div
+    class="sm:w-[740px] w-full h-[393px] bg-white p-5 rounded-xl shadow dark:bg-[#242424]"
+  >
     <div class="flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <h2 class="text-lg font-semibold">Report</h2>
+        <h2 class="text-lg font-semibold">{{ "reports.Report" | translate }}</h2>
         <div
           class="w-[75px] px-2 py-1 flex items-center gap-3 border border-[#D2DCE1] text-[#9AA0A4] font-bold text-xs rounded-[15px]"
         >
-          <p>Sales</p>
+          <p>{{ "reports.sales" | translate }}</p>
           <i
             class="pi pi-sort-down-fill"
             style="font-size: 10px; margin-top: 2px"
@@ -14,24 +16,26 @@
         </div>
       </div>
 
-      <div class="flex gap-4 text-[#C4CCD0] font-bold text-xs dark:text-[#ffffff]">
+      <div
+        class="flex gap-4 text-[#C4CCD0] font-bold text-xs dark:text-[#ffffff]"
+      >
         <button
           (click)="updateChart('day')"
           [class.active]="selectedFilter === 'day'"
         >
-          Day
+          {{ "reports.day" | translate }}
         </button>
         <button
           (click)="updateChart('week')"
           [class.active]="selectedFilter === 'week'"
         >
-          Week
+          {{ "reports.week" | translate }}
         </button>
         <button
           (click)="updateChart('month')"
           [class.active]="selectedFilter === 'month'"
         >
-          Month
+          {{ "reports.month" | translate }}
         </button>
       </div>
     </div>

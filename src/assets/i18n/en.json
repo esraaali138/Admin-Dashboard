@@ -1,0 +1,70 @@
+{
+  "dashboard": {
+    "searchPlaceholder": "Search",
+    "login": "Log in",
+    "settings": "Settings",
+    "logout": "Sign out",
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "users": "Users",
+      "items": "Items",
+      "transactions": "Transactions",
+      "reports": "Reports",
+      "messages": "Messages",
+      "support": "Support",
+      "managerPro": "Manager Pro"
+    
+  },
+  "reports": {
+    "Analytics": "Analytics",
+    "Report": "Report",
+    "sales": "Sales",
+    "totalRevenue": "Total Revenue",
+    "todayRevenue": "Today Revenue",
+    "itemsSold": "Items Sold",
+    "usersActive": "Users Active",
+    "visits": "Visits",
+    "D": "D",
+    "W": "W",
+    "M": "M",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+
+  "orders": {
+    "allOrders": "All Orders",
+    "itemName": "Item Name",
+    "qty": "Qty",
+    "orderDate": "Order Date",
+    "amount": "Amount",
+    "status": "Status",
+    "pending": "Pending",
+    "approved": "Approved",
+    "inProcess": "In Process",
+    "cancelled": "Cancelled",
+    "recentOrders": "Recent Orders",
+    "goToOrdersPage": "Go to Orders page"
+  },
+  
+    "auth": {
+      "signIn": "Sign In",
+      "signUp": "Sign Up",
+      "signInToAccount": "Sign in to your account",
+      "signUpYourAccount": "Sign up your account",
+      "username": "Username",
+      "usernameRequired": "* This field is required",
+      "email": "Email",
+      "emailRequired": "* Email is required",
+      "emailInvalid": "* Please enter a valid email",
+      "password": "Password",
+      "passwordRequired": "* Password is required",
+      "passwordMinLength": "* Password must be at least 8 characters",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot Password?",
+      "dontHaveAccount": "Don't have an account?",
+      "alreadyHaveAccount": "Already have an account?"
+    }
+  
+  
+}
